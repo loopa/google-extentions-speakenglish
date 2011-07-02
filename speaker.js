@@ -13,11 +13,11 @@ function handleSpeaker(info,tab){
 }
 
 var lags = [
-			  {key:"en",title:"English"}, // 英語
-			  {key:"fr",title:"French"},  // フランス語
-			  {key:"de",title:"German"},  // ドイツ語
-			  {key:"es",title:"Spanish"}, // スペイン語
-			  {key:"ru",title:"Russian"}  // ロシア語
+			  {key:"en",title:"英語"},        // 英語-English
+			  {key:"fr",title:"フランス語"},  // フランス語-French
+			  {key:"de",title:"ドイツ語"},    // ドイツ語-German
+			  {key:"es",title:"スペイン語"},  // スペイン語-Spanish
+			  {key:"ru",title:"ロシア語"}     // ロシア語-Russian
 			  ];
 			
 var obj,id;
