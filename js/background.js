@@ -27,15 +27,19 @@
     function speakEnglish(text,callback){
         var URL = "http://translate.google.com/translate_tts?tl=en&q=" + text;
         var audio = new Audio(URL);
-        audio.addEventListener("ended",callback,true);
-
-        try{
+        audio.load();
+        audio.addEventListener('loadedmetadata', function() {
+            console.log("Playing " + audio.src + ", for: " + audio.duration + "seconds.");
             audio.play();
-        }catch(e){
-            console.log(e);
-            callback();
-        }
+            setTimeout(function() {
+                callback();
+            }, (audio.duration * 1000) + 1000);
+        });
 
+        // audio.addEventListener("ended",function(){
+        //     console.log("audio ended");
+        //     callback();
+        // },false);
     };
 
     function sendRequest(tab,selectionText,resultText) {
@@ -66,8 +70,7 @@
         });
     };
 
-    setContextMenus();
-
+    // setContextMenus();
     chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
         speakEnglish(request.selectionText,function(){
             sendResponse(request);
@@ -81,4 +84,5 @@
     chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         setContextMenus();
     });
+
 })();
