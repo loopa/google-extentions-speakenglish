@@ -4,6 +4,7 @@
     "name":"SpeakEnglish",
     "version":"2.0.0",
     "description":"日本人のためのツール。選択された英語の発音を聞けます。 「この単語なんて読むんだろう？」と思った時に使って下さい。",
+    "options_page":"/html/options.html",
     "icons": {
         "16":"/icons/icon-16.png",
         "48":"/icons/icon-48.png",
@@ -23,8 +24,8 @@
         {
         "run_at":"document_end",
         "all_frames": false,
-        "js": ["/js/jquery.min.js","/js/w2ui-1.2.min.js","/js/contents.js"],
-        "css":["/css/w2ui-1.2.min.css"],
+        "js": ["/js/contents.js","/js/lib/jquery.min.js","/js/lib/w2ui-1.2.min.js"],
+        "css":["/css/lib/w2ui-1.2.min.css"],
         "matches": ["http://*/*","https://*/*"]
         }
     ]
