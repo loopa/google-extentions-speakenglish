@@ -24,7 +24,7 @@ $(function () {
             modal : true,
             style:"text-align:center;padding:5px 5px 5px 5px;",
             title:"Speak English!",
-            body:body,
+            body:body,w
             onOpen:function(){
                 chrome.extension.sendRequest({selectionText:selectionText},function(response){
                     $().w2popup('close');

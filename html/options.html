@@ -1,21 +1,37 @@
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>SpeakEnglish Settings</title>
-  <link rel="stylesheet" href="/css/options.css" />
-</head>
-<body>
-
-<div class="sampleBox sampleBoxWhite">
-  <ul class="menu" id="list">
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">CSS</a></li>
-    <li><a href="#">jQuery</a></li>
-    <li><a href="#">PHP</a></li>
-    <li><a href="#">Ruby</a></li>
-  </ul>
-</div>
-
-
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>SpeakEnglish Settings</title>
+    <link rel="stylesheet" href="/css/options.css" />
+    <script src="/js/lib/jquery.min.js"></script>
+    <script src="/js/options.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <header id="header">
+        <p>Speak English Settings</p>
+      </header>
+      <div id="menu-wrap">
+        <div class="sampleBox sampleBoxWhite">
+          <ul class="menu" id="list">
+            <li><a href="#">表示</a></li>
+            <li><a href="#">音声言語</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id ="contents">
+        <div class="content_wrap">
+          <input type="checkbox" name="" id="">
+          <span>ポップアップ表示を有効にします。</span>
+          <p>内容1</p>
+        </div>
+        <div class="content_wrap disnon">内容2
+          <input type="text">
+        </div>
+      </div>
+      <footer id="footer">
+        <p>footer</p>
+      </footer>
+    </div>
+  </body>
 </html>
