@@ -1,5 +1,7 @@
 $(function () {
 
+
+
     function showPopup (request) {
         var selectionText = request.selectionText;
         var resultText = request.resultText;

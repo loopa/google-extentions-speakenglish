@@ -2,34 +2,57 @@
   <head>
     <meta charset="utf-8" />
     <title>SpeakEnglish Settings</title>
-    <link rel="stylesheet" href="/css/options.css" />
-    <script src="/js/lib/jquery.min.js"></script>
-    <script src="/js/options.js"></script>
+    <link rel="stylesheet" href="../css/options.css" />
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/knockout-2.3.0.js"></script>
+    <script src="../js/options.js"></script>
   </head>
   <body>
-    <div id="wrap">
-      <header id="header">
-        <p>Speak English Settings</p>
+    <div id="continer">
+      <header>
+        <h1>Speak English Settings</h1>
       </header>
-      <div id="menu-wrap">
-        <div class="sampleBox sampleBoxWhite">
-          <ul class="menu" id="list">
-            <li><a href="#">表示</a></li>
-            <li><a href="#">音声言語</a></li>
-          </ul>
-        </div>
+      <div id="contents">
+        <table>
+          <tr>
+            <td>
+              <p>表示:</p>
+            </td>
+            <td>
+              <article id="display-settings">
+              <p>
+              <input type="checkbox" id="popup_enable" data-bind="checked: popup_enable"/>
+              <label for="popup_enable">ポップアップ表示を有効にします。</label>
+              </p>
+              <input type="checkbox" id="auto_close_enable" data-bind ="checked:auto_close_enable">
+              <label for="auto_close_enable">ポップアップを自動で閉じます。</label>
+              </article>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>音声言語:</p>
+            </td>
+            <td>
+              <select  data-bind="
+                options: items,
+                optionsText: function(items){return items.title + ' ( ' + items.key + ' )'},
+                optionsValue: 'key'">
+              </select>
+
+              <select name="" id="select_lag">
+                <option value="">en</option>
+                <option value="">us</option>
+                <option value="">fr</option>
+                <option value="">ja</option>
+                <option value="">aaaa</option>
+              </select>
+              <p>test</p>
+            </td>
+          </tr>
+        </table>
       </div>
-      <div id ="contents">
-        <div class="content_wrap">
-          <input type="checkbox" name="" id="">
-          <span>ポップアップ表示を有効にします。</span>
-          <p>内容1</p>
-        </div>
-        <div class="content_wrap disnon">内容2
-          <input type="text">
-        </div>
-      </div>
-      <footer id="footer">
+      <footer>
         <p>footer</p>
       </footer>
     </div>

@@ -1,5 +1,21 @@
 (function(){
 
+    function loadDefaultConfig(callback){
+        var data;
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = handleStateChange;
+        xhr.open("GET", chrome.extension.getURL('/../data/default_config.json'), true);
+        xhr.send();
+        function handleStateChange(data){
+            if (xhr.readyState == 4) {
+                var data = xhr.responseText.replace(/^[a-z_.\-]+\((.*)\)$/ig, "$1");
+                console.log(data);
+                var json = JSON.parse(xhr.responseText);
+                callback(json);
+            }
+        }
+    }
+
     // henkan
     function translate(selectionText,callback) {
         var url = "http://translate.google.co.jp/" //?hl=ja&layout=2&eotf=1&sl=en&tl=ja&q=" + selectionText;
@@ -69,6 +85,11 @@
             });
         });
     };
+
+    loadDefaultConfig(function(json){
+        console.log(json);
+    });
+
 
     // setContextMenus();
     chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {

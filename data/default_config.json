@@ -1,0 +1,13 @@
+{
+    "popup_enable":true,
+    "auto_close_enable":true,
+    "select_lag_key":"en",
+    "select_lag_value":"英語",
+    "select_lag":[
+      {"key":"en","title":"英語"},
+      {"key":"fr","title":"フランス語"},
+      {"key":"de","title":"ドイツ語"},
+      {"key":"es","title":"スペイン語"},
+      {"key":"ru","title":"ロシア語"}
+    ]
+}

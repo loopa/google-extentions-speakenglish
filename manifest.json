@@ -28,5 +28,6 @@
         "css":["/css/lib/w2ui-1.2.min.css"],
         "matches": ["http://*/*","https://*/*"]
         }
-    ]
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
